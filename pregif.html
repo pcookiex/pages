@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedial</title>
+  <style>
+    header {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('headerpic.png'); /* Replace with your header image URL */
+            background-size: cover; /* Ensures the image covers the area without stretching */
+            background-position: center; /* Keeps the image centered */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 300px; /* Adjusts the height on smaller screens */
+            }
+            .para {
+               width: 80%; 
+            }
+
+            
+        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .text {
+      font-size: 1.8em; /* Large but not header size */
+      color: #333;
+      margin-bottom: 20px;
+      padding: 0 15px; /* Slight padding for small screens */
+      line-height: 1.4;
+    }
+    .button {
+      font-size: 3em; /* Make the button text prominent */
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #333;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+    <header></header>
+  <div class="text">
+    Multimedial! Hier ist zum Beispiel eine Auswahl an GIFs, die unser Jahr beschreiben.
+  </div>
+  <a href="site1.html" class="button">2024</a>
+</body>
+</html

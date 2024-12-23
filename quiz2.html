@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #f9f9f9;
+      height: 100vh;
+      justify-content: center;
+    }
+    .question {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 80%;
+      max-width: 300px;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+    .correct {
+      background-color: #4caf50;
+      color: white;
+    }
+    .wrong {
+      background-color: #f44336;
+      color: white;
+    }
+    button.wrong:hover {
+      background-color: #d32f2f;
+    }
+    .img{
+        size: auto;
+        margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+    <img class="img" src="gifs/mario-kart-what-a-shame.gif">
+  <div class="question">
+    Wer hat die Krone auf?
+  </div>
+  <div class="button-container">
+    <button onclick="wrongChoice(this)">Steffi</button>
+    <button onclick="wrongChoice(this)">Johann</button>
+    <button onclick="wrongChoice(this)">Henni</button>
+    <button onclick="correctChoice()">Patrick</button>
+    <button onclick="wrongChoice(this)">Sara</button>
+  </div>
+  <script>
+    function correctChoice() {
+      window.location.href = "quiz3.html";
+    }
+    function wrongChoice(button) {
+      button.classList.add("wrong");
+      button.disabled = true;
+    }
+  </script>
+</body>
+</html>

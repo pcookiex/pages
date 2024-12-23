@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #f9f9f9;
+      height: 100vh;
+      justify-content: center;
+    }
+    p {
+        font-family: 'Arial';
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    
+    .question {
+      padding-top: 30px;
+      font-size: 1.5em;
+      margin-bottom: 60px;
+      margin-top: 20px;
+      color: #333;
+    }
+    .container {
+        max-width: 500px; /* Restrict content width */
+        margin: 0 auto; /* Centers the container itself */
+        display: flex; /* Use flexbox layout */
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Horizontally center the content */
+        align-items: center; /* Vertically center the content if the container's height is large */
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      width: 80%;
+      
+    }
+    @media (max-width: 768px) {
+        .image-grid {
+            grid-template-columns: 1fr; /* Stacks images vertically */
+        }
+        .test{
+        margin-bottom: 1000px;
+    }
+    }
+    .image-grid div {
+      position: relative;
+    }
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+    .red-x {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: red;
+      font-size: 3em;
+      font-weight: bold;
+      display: none;
+    }
+    .wrong img {
+        opacity: 0.2;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="test"></div>
+    <div class="container">
+  <div class="question">
+    Mögen Zoe und ich uns?
+  </div>
+  <div class="image-grid">
+    <div onclick="correctChoice()">
+        <img src="images/pz.jpg" alt="Correct Choice">
+        <p>Wer weiß das schon!</p>
+      </div>
+    <div onclick="correctChoice()">
+      <img src="images/pzja.jpg" alt="Wrong Choice">
+      <div class="red-x">X</div>
+      <p>Na klaro ❤️</p>
+    </div>
+    <div onclick="correctChoice()">
+      <img src="images/pznein.jpg" alt="Wrong Choice">
+      <div class="red-x">X</div>
+      <p>Never ever 😡</p>
+    </div>
+    <div onclick="wrongChoice(this)">
+      <img src="images/pzgod.jpg" alt="Wrong Choice">
+      <div class="red-x">X</div>
+      <p>Das kann nur Gott wissen</p>
+    </div>
+  </div>
+  </div>
+  <script>
+    function correctChoice() {
+      window.location.href = "quiz4.html";
+    }
+    function wrongChoice(element) {
+      element.classList.add("wrong");
+    }
+  </script>
+</body>
+</html>
